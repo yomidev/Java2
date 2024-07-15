@@ -4,6 +4,7 @@
  */
 package holamundo2;
 
+import java.util.*;
 /**
  *
  * @author Yomi
@@ -16,6 +17,15 @@ public class HolaMundo2 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hola Mundo");
-    }
+        
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Ingresa tu nombre");
+        String nombre = teclado.nextLine();
+        
+        System.out.println("Hola"+" "+nombre);
+        
+        teclado.close();
+    }    
     
 }
+    
