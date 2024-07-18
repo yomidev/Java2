@@ -84,5 +84,4 @@ public class OperacionesBasicaa {
         System.out.println("NOT: "+ not);
 
     }
-    
 }
