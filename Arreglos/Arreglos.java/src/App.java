@@ -12,10 +12,100 @@ public class App {
         };
         String[] songs;
 
+        String [] actores = { "Timothée Chalamet", "Florence Pugh", "Margot Robin",
+            "Cate Blanchet", "Jennifer Lawrence", " ", "Anna Taylor Joy", " ", " ", "Ryan Gosling"
+        };
+        Scanner teclado = new Scanner(System.in);
+        int[] lados;
+        System.out.println("ingrese el numero de lados: " );
+        int l= teclado.nextInt();
+        lados= new int[l];
+        for (int idx = 0; idx < lados.length; idx++) {
+            System.out.println("ingresa el valor de lado");
+            int l1= teclado.nextInt();
+            lados[idx]=l1;
 
+        }
+
+        System.out.println(Arrays.toString(lados));
+        int suma=0;
+        for (int i = 0; i < lados.length; i++) {
+            suma=suma+lados[i];
+            
+        }
+        System.out.println(suma);
+        
+        
+        
+        String [] cantantes;
+        cantantes = new String[10];
+        String C;
+        for (int i = 0; i < cantantes.length; i++) {
+            System.out.println("Ingresa un cantante");
+            C=teclado.nextLine();
+            cantantes[i]=C;
+
+            
+        }
+
+            System.out.println(Arrays.toString(cantantes));
+
+
+        String actor;
+        for (int idx = 0; idx < actores.length; idx++) {
+            if (actores[idx].equals(" ")) {
+                System.out.println("Ingresa un actor");
+                actor= teclado.nextLine().toUpperCase();
+                actores[idx]=actor;
+            }
+        }
+        System.out.println(Arrays.toString(actores).toUpperCase());
+        
+        for (int idx = 0; idx < actores.length; idx++) {
+            String invertida="";
+            String palabra = actores[idx];
+            for (int i =palabra.length()-1; i >=0; i--) {
+                    invertida=invertida+palabra.charAt(i);
+            }
+            actores[idx] = invertida;  
+        }
+        
+        System.out.println(Arrays.toString(actores).toUpperCase());
+        
+        int n;
+        System.out.println("ingrese la cantidad de canciones");
+        n=teclado.nextInt();
+        songs=new String[n];
+       String cancion;
+        for (int idx = 0; idx < songs.length; idx++) {
+        System.out.println("Ingresa una cancion");
+        cancion= teclado.nextLine();
+        songs[idx]= cancion;
+        }
+
+        System.out.println(Arrays.toString(songs));
+        
+        
+        
+        String caricatura;
+        for (int i = 0; i < anime.length; i++) {
+            System.out.println(" ingresa tu anime favorita");
+            caricatura=teclado.nextLine();
+            anime[i]=caricatura;
+
+            
+        }
+        System.out.println(Arrays.toString(anime));
+        
+        
+        
+        
+        
+        
+        
+        
         //String
         String other;
-        Scanner teclado = new Scanner(System.in);
         for (int i = 0; i < kpop.length; i++) {
             String grupoActual = kpop[i];
             if (grupoActual.equals(" ")) {
@@ -51,6 +141,8 @@ public class App {
                break;
             }else{
                 System.out.println("Lo sentimos no tenemos información de este grupo "+ search);
+                found = false;
+                break;
             }
             
         }
@@ -62,7 +154,7 @@ public class App {
                 minimo = numeros[i];
             }
         }
-        int suma = 0;
+        int suma2 = 0;
         for(int j = 0; j< numeros.length; j++){
             suma = suma + numeros[j];
         }
