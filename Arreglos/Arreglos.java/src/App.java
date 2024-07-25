@@ -27,25 +27,36 @@ public class App {
         System.out.println("Impresion de Array: "+ Arrays.toString(kpop));
 
         String integrantes;
+        String canciones;
+
         for (int i = 0; i < kpop.length; i++) {
             System.out.println("Ingresa tu bias " + kpop[i]+ ": ");
             integrantes = teclado.nextLine();
-            kpop[i] = kpop[i].concat(" - ").concat(integrantes);
-        }
-
-        System.out.println("Impresion de Array: "+ Arrays.toString(kpop));
-
-        String canciones;
-        for (int i = 0; i < kpop.length; i++) {
             System.out.println("Ingresa tu cancion favorita de " + kpop[i]+ ": ");
             canciones = teclado.nextLine();
+            kpop[i] = kpop[i].concat(" - ").concat(integrantes);
             kpop[i] = kpop[i].concat(" - ").concat(canciones);
-        }
 
+        }
         System.out.println("Impresion de Array: "+ Arrays.toString(kpop));
 
+        System.out.println("Buscador");
+        System.out.println("Ingresa el nombre de un grupo para conocer la información");
+        String search = teclado.nextLine().toUpperCase();
+        boolean found = false;
+        for (int idx = 0; idx < kpop.length; idx++) {
+            if (kpop[idx].contains(search)) {
+               System.out.println("Informacion del grupo buscado" + "\n" + kpop[idx]);
+               found=true;
+               break;
+            }else{
+                System.out.println("Lo sentimos no tenemos información de este grupo "+ search);
+            }
+            
+        }
+        
         //Numero menor
-        /*int minimo = numeros[0];
+        int minimo = numeros[0];
         for (int i = 0; i< numeros.length; i++) {
             if(numeros[i]<minimo){
                 minimo = numeros[i];
@@ -63,6 +74,6 @@ public class App {
         double promedio = suma/numeros.length;
         System.out.println("El promedio es: "+ promedio);
         System.out.println("El numero menor: " + minimo);
-        System.out.println("Array Invertido: "+ Arrays.toString(invertido));*/
+        System.out.println("Array Invertido: "+ Arrays.toString(invertido));
     }
 }
